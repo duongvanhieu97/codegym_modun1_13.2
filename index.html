@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <label>
+        Nhập từ:
+        <input type="text" id="name">
+    </label>
+</div>
+<button id="result" onclick="result()">Dịch</button>
+<script>
+    function result() {
+        let arr_eng = ["banana", "apple", "orange", "pen", "pencil", "book"];
+        let arr_vie = ["chuối", "táo", "cam", "bút", "bút chì", "sách"];
+        let string = document.getElementById("name").value;
+        let index_eng = 0;
+        let result = "";
+        for (let i = 0; i < arr_eng.length; i++) {
+            if (string == arr_eng[i]) {
+                index_eng = i;
+                for (let j = 0; j < arr_vie.length; j++) {
+                    if (index_eng == j) {
+                        result = arr_vie[j];
+                    }
+                }
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</body>
+</html>
